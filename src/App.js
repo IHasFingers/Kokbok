@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SearchBar from './SearchBar';
+import RecipeCards from './RecipeCards';
+import axios from 'axios';
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
+  const handleSearch = async (searchInput) => {
+    try {
+      const response = await axios.get(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=4eea7cb447ec44139a6d8c9ed91581c7&query=${searchInput}`
+      );
+      const fetchedRecipes = response.data.results;
+      console.log('Fetched recipes:', fetchedRecipes);
+  
+      if (fetchedRecipes.length === 0) {
+        console.log('No recipes found.');
+      }
+  
+      setRecipes(fetchedRecipes);
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+      setRecipes([]);
+    }
+  };
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Recipe App</h1>
+      <SearchBar onSearch={handleSearch} />
+      <RecipeCards recipes={recipes} />
     </div>
   );
 }
