@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import axios from 'axios';
+import RecipeModal from './RecipeModal';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const handleSearch = async (searchInput) => {
     try {
@@ -18,10 +20,19 @@ function App() {
     }
   };
 
+  const handleOpenRecipeModal = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  const handleCloseRecipeModal = () => {
+    setSelectedRecipe(null);
+  };
+
   return (
     <div>
       <h1>Recipe App</h1>
-      <SearchBar onSearch={handleSearch} recipes={recipes} />
+      <SearchBar onSearch={handleSearch} recipes={recipes} onOpenRecipeModal={handleOpenRecipeModal} />
+      {selectedRecipe && <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipeModal} />}
     </div>
   );
 }
