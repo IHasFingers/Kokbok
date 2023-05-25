@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 const RecipeCards = ({ recipes }) => {
   return (
@@ -21,4 +21,4 @@ const RecipeCards = ({ recipes }) => {
   );
 };
 
-export default RecipeCards;
+export default RecipeCards;*/

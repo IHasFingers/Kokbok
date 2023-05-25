@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
-import RecipeCards from './RecipeCards';
 import axios from 'axios';
 
 function App() {
@@ -12,24 +11,17 @@ function App() {
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=4eea7cb447ec44139a6d8c9ed91581c7&query=${searchInput}`
       );
       const fetchedRecipes = response.data.results;
-      console.log('Fetched recipes:', fetchedRecipes);
-  
-      if (fetchedRecipes.length === 0) {
-        console.log('No recipes found.');
-      }
-  
       setRecipes(fetchedRecipes);
     } catch (error) {
       console.error('Error fetching recipes:', error);
       setRecipes([]);
     }
   };
-  
+
   return (
     <div>
       <h1>Recipe App</h1>
-      <SearchBar onSearch={handleSearch} />
-      <RecipeCards recipes={recipes} />
+      <SearchBar onSearch={handleSearch} recipes={recipes} />
     </div>
   );
 }
