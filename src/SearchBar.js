@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -41,6 +41,21 @@ const SearchBar = () => {
   const handleCloseRecipeModal = () => {
     setSelectedRecipe(null);
   };
+  
+  const handleSaveRecipe = () => {
+    if (selectedRecipe) {
+      const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+      savedRecipes.push(selectedRecipe);
+      localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+    }
+  };
+
+  useEffect(() => {
+    const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    if (savedRecipes.length > 0) {
+      setSelectedRecipe(savedRecipes[savedRecipes.length - 1]);
+    }
+  }, []);
 
   return (
     <div>
@@ -89,6 +104,9 @@ const SearchBar = () => {
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseRecipeModal}>
               Stängggg
+            </Button>
+            <Button variant="primary" onClick={handleSaveRecipe}>
+              Save Recipe
             </Button>
           </Modal.Footer>
         </Modal>
