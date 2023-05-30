@@ -13,7 +13,8 @@ const SearchBar = () => {
       setRecipes([]);
       return;
     }
-
+//alternativ api key = 4eea7cb447ec44139a6d8c9ed91581c7
+//alternativ api key = 67c5a6e8f32d6511fac4c77d7213ed93556987d8
     try {
       const response = await axios.get(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d&query=${searchInput}`
