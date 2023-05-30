@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import axios from 'axios';
 import RecipeModal from './RecipeModal';
+import './style.css'
 
 function App() {
   const [recipes, setRecipes] = useState([]);
