@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import axios from 'axios';
 import RecipeModal from './RecipeModal';
+import Navbar from './Navbar'
 import './style.css'
 
 function App() {
@@ -31,9 +32,13 @@ function App() {
 
   return (
     <div>
-      <h1>Receptdatabasen</h1>
-      <SearchBar onSearch={handleSearch} recipes={recipes} onOpenRecipeModal={handleOpenRecipeModal} />
-      {selectedRecipe && <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipeModal} />}
+      <Navbar />
+  
+      <div className="container">
+        <h1>Receptdatabasen</h1>
+        <SearchBar onSearch={handleSearch} recipes={recipes} onOpenRecipeModal={handleOpenRecipeModal} />
+        {selectedRecipe && <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipeModal} />}
+      </div>
     </div>
   );
 }

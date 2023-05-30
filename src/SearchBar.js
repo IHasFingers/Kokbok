@@ -2,6 +2,7 @@ import React, { useState , useEffect} from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import './style.css'
 
 const SearchBar = () => {
   const [recipes, setRecipes] = useState([]);
@@ -59,7 +60,7 @@ const SearchBar = () => {
 
   return (
     <div>
-      <input className='search-bar-container' type="text" onChange={(event) => handleSearch(event.target.value)} />
+      <input className='search-bar-container' type="text" placeholder='Sök efter recept eller ingredienser...' onChange={(event) => handleSearch(event.target.value)} />
       <h2>Recept</h2>
       {recipes.length > 0 ? (
         <div className="row">
@@ -106,7 +107,7 @@ const SearchBar = () => {
               Stängggg
             </Button>
             <Button variant="primary" onClick={handleSaveRecipe}>
-              Save Recipe
+              Spara recept
             </Button>
           </Modal.Footer>
         </Modal>
