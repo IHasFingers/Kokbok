@@ -45,3 +45,13 @@ h1 {
 h2 {
   margin-top: 1em;
 }
+
+button {
+  margin-top: 5px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+}
+

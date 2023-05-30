@@ -28,17 +28,23 @@ const SearchBar = () => {
   };
 
   const handleOpenRecipeModal = async (recipeId) => {
-    try {
-      const response = await axios.get(
-        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d`
-      );
-      const fullRecipe = response.data;
-      setSelectedRecipe(fullRecipe);
-    } catch (error) {
-      console.error('Error fetching recipe details:', error);
-      setSelectedRecipe(null);
-    }
-  };
+  // Check if the clicked recipe is already the selected recipe
+  if (selectedRecipe && selectedRecipe.id === recipeId) {
+    setSelectedRecipe(null); // Close the recipe modal
+    return;
+  }
+
+  try {
+    const response = await axios.get(
+      `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d`
+    );
+    const fullRecipe = response.data;
+    setSelectedRecipe(fullRecipe);
+  } catch (error) {
+    console.error('Error fetching recipe details:', error);
+    setSelectedRecipe(null);
+  }
+};
 
   const handleCloseRecipeModal = () => {
     setSelectedRecipe(null);
@@ -71,9 +77,11 @@ const SearchBar = () => {
                 <img src={recipe.image} className="card-img-top" alt={recipe.title} />
                 <div className="card-body">
                   <h5 className="card-title">{recipe.title}</h5>
-                  <Button variant="primary" onClick={() => handleOpenRecipeModal(recipe.id)}>
+                  <div className='d-grid gap-2'>
+                  <Button variant="primary" size="lg" onClick={() => handleOpenRecipeModal(recipe.id)}>
                     Se recept
                   </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -104,8 +112,8 @@ const SearchBar = () => {
             </ol>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseRecipeModal}>
-              Stängggg
+            <Button variant="danger" onClick={handleCloseRecipeModal}>
+              Stäng
             </Button>
             <Button variant="primary" onClick={handleSaveRecipe}>
               Spara recept
