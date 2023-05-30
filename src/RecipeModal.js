@@ -11,16 +11,16 @@ function RecipeModal({ recipe, onClose }) {
         {recipe && (
           <div>
             <img src={recipe.image} alt={recipe.title} />
-            <p>Additional information or description here.</p>
+            <p>Följande nedan kommer receptet. Vill du spara den klickar du på Spara recept</p>
           </div>
         )}
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onClose}>
-          Close
+          Stäng
         </Button>
         <Button variant="primary" onClick={onClose}>
-          Save Recipe
+          Spara recept
         </Button>
       </Modal.Footer>
     </Modal>

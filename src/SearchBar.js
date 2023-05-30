@@ -44,8 +44,8 @@ const SearchBar = () => {
 
   return (
     <div>
-      <input type="text" onChange={(event) => handleSearch(event.target.value)} />
-      <h2>Recipe Cards</h2>
+      <input className='search-bar-container' type="text" onChange={(event) => handleSearch(event.target.value)} />
+      <h2>Recept</h2>
       {recipes.length > 0 ? (
         <div className="row">
           {recipes.map((recipe) => (
@@ -55,7 +55,7 @@ const SearchBar = () => {
                 <div className="card-body">
                   <h5 className="card-title">{recipe.title}</h5>
                   <Button variant="primary" onClick={() => handleOpenRecipeModal(recipe.id)}>
-                    View Recipe
+                    Se recept
                   </Button>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const SearchBar = () => {
           ))}
         </div>
       ) : (
-        <p>No recipes found.</p>
+        <p>Inga recept funna!</p>
       )}
       {selectedRecipe && (
         <Modal show={true} onHide={handleCloseRecipeModal}>
@@ -72,14 +72,14 @@ const SearchBar = () => {
           </Modal.Header>
           <Modal.Body>
             <img src={selectedRecipe.image} alt={selectedRecipe.title} />
-            <p>Additional information or description here.</p>
-            <h5>Ingredients:</h5>
+            <p>Receptet:</p>
+            <h5>Ingredienser:</h5>
             <ul>
               {selectedRecipe.extendedIngredients.map((ingredient) => (
                 <li key={ingredient.id}>{ingredient.original}</li>
               ))}
             </ul>
-            <h5>Instructions:</h5>
+            <h5>Instruktioner:</h5>
             <ol>
               {selectedRecipe.analyzedInstructions[0].steps.map((step) => (
                 <li key={step.number}>{step.step}</li>
@@ -88,7 +88,7 @@ const SearchBar = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseRecipeModal}>
-              Close
+              Stängggg
             </Button>
           </Modal.Footer>
         </Modal>

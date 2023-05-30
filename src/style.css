@@ -1,3 +1,43 @@
 img {
     max-width: 80%;
 }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* replace with your preferred font */
+    background-color: #c3dbf2; /* a light grey color, you can choose your own color */
+  }
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  }
+  
+.card:hover {
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
+  }
+  .modal-body {
+    padding: 2em;
+  }
+  
+  .modal-body img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+.modal-body h5, .modal-body p {
+    margin-top: 1em;
+  }
+h1 {
+    text-align: center;
+    margin-top: 2em;
+  }
+.search-bar-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+  }
+  

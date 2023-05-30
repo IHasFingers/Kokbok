@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <h1>Recipe App</h1>
+      <h1>Receptdatabasen</h1>
       <SearchBar onSearch={handleSearch} recipes={recipes} onOpenRecipeModal={handleOpenRecipeModal} />
       {selectedRecipe && <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipeModal} />}
     </div>
