@@ -16,7 +16,7 @@ const SearchBar = () => {
 
     try {
       const response = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=4eea7cb447ec44139a6d8c9ed91581c7&query=${searchInput}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d&query=${searchInput}`
       );
       const fetchedRecipes = response.data.results;
       setRecipes(fetchedRecipes);
@@ -29,7 +29,7 @@ const SearchBar = () => {
   const handleOpenRecipeModal = async (recipeId) => {
     try {
       const response = await axios.get(
-        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=4eea7cb447ec44139a6d8c9ed91581c7`
+        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d`
       );
       const fullRecipe = response.data;
       setSelectedRecipe(fullRecipe);
