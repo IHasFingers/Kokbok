@@ -9,7 +9,6 @@ function Navigation() {
       <Container>
         <Navbar.Brand href="/">Kokbok</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="/">Receptdatabasen</Nav.Link>
           <Nav.Link href="/saved-recipes">Sparade Recept</Nav.Link>
         </Nav>
       </Container>
