@@ -5,34 +5,56 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif; /* replace with your preferred font */
-    background-color: #c3dbf2; /* a light grey color, you can choose your own color */
+    background-image: url(img/back.jpg) ; /* a light grey color, you can choose your own color */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
   }
 
 .card {
     border: none;
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+    background-color: rgb(38, 53, 58);
+    color: white;
   }
   
 .card:hover {
     transform: scale(1.05);
     transition: all .3s ease-in-out;
   }
-  .modal-body {
+.modal-header{
+  background-color: #cfc5a3;
+  border-bottom: black !important;
+}
+.modal-body {
     padding: 2em;
-  }
+    background-color: #fff3cd;
+}
+
+.modal-content{
+  color: black !important;
+}
+
+
   
-  .modal-body img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+.modal-body img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
   
 .modal-body h5, .modal-body p {
     margin-top: 1em;
   }
+
+.modal-footer{
+  background-color: #cfc5a3;
+  border-top: black;
+}
 h1 {
     text-align: center;
     margin-top: 2em;
+    color: white;
   }
 .search-bar-container {
     display:flex;
@@ -44,10 +66,15 @@ h1 {
  
 h2 {
   margin-top: 1em;
+  color: white;
 }
 
 button {
   margin-top: 5px;
+  background-color: rgb(236, 207, 170) !important;
+  color: black !important;
+  
+  border: solid 3px rgb(145, 145, 130) !important;
 }
 
 .name {
@@ -55,3 +82,6 @@ button {
   justify-content: center;
 }
 
+.container > div >p{
+  color: white !important;
+}
