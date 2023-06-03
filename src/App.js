@@ -57,7 +57,7 @@ function App() {
   const handleCloseRecipeModal = () => {
     setSelectedRecipe(null);
   };
-
+// renderar strukturen på hela projektet
   return (
     <Router>
       <div>

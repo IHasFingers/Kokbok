@@ -5,8 +5,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif; /* replace with your preferred font */
-    background-image: url(img/back.jpg) ; /* a light grey color, you can choose your own color */
-    background-size: 100% 100%;
+    background-image: url(img/eat.jpg) ; /* a light grey color, you can choose your own color */
+    background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
   }

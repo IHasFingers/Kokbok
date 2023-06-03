@@ -3,11 +3,11 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './style.css'
-
+// sätter nödvändiga variabler för att det ska fungera som usestate
 const SearchBar = () => {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-
+// haterar sökningen
   const handleSearch = async (searchInput) => {
     if (searchInput.trim() === '') {
       setRecipes([]);
@@ -15,6 +15,7 @@ const SearchBar = () => {
     }
 //alternativ api key = 4eea7cb447ec44139a6d8c9ed91581c7
 //alternativ api key = 67c5a6e8f32d6511fac4c77d7213ed93556987d8
+// gör det första anropet
     try {
       const response = await axios.get(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d&query=${searchInput}`
@@ -28,12 +29,12 @@ const SearchBar = () => {
   };
 
   const handleOpenRecipeModal = async (recipeId) => {
-  // Check if the clicked recipe is already the selected recipe
+  // Kontrollerar om det klickade receptet redan är det valda receptet
   if (selectedRecipe && selectedRecipe.id === recipeId) {
-    setSelectedRecipe(null); // Close the recipe modal
+    setSelectedRecipe(null); // stänger modalen
     return;
   }
-
+// för att få stegen på receptet görs ett nytt anrop som söker efter rätt nycklar när man klickar på modalen baserat på id
   try {
     const response = await axios.get(
       `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=9f3b681f5b444fa4b78b471f5f1bc70d`
@@ -49,22 +50,22 @@ const SearchBar = () => {
   const handleCloseRecipeModal = () => {
     setSelectedRecipe(null);
   };
-  
+  //Hanterar sparadet av recept genom localstorage
   const handleSaveRecipe = () => {
     if (selectedRecipe) {
       const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
       savedRecipes.push(selectedRecipe);
       localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
-    }
+    } alert("Sparade receptet");
   };
-
+// loopar igenom localstorage
   useEffect(() => {
     const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
     if (savedRecipes.length > 0) {
       setSelectedRecipe(savedRecipes[savedRecipes.length - 1]);
     }
   }, []);
-
+// själva html som returneras när en sökning görs
   return (
     <div>
       <input className='search-bar-container' type="text" placeholder='Sök efter recept eller ingredienser...' onChange={(event) => handleSearch(event.target.value)} />

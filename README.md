@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+Detta är Kokbok(orginellt namn) skapat av Philip Aronsson, Alexander Lilja Nordin och Pablo Pintos.
+Kokbok är en hemsida som gör matlagningen till en fröjd.
+Har du som många andra dålig fantasi i köket? Då är denna sida för dig.
+Med sitt stora utbud av utsökta recept gör detta vardagsstressen lite mer dräglig.
+Om du är sugen på en specifik rätt kan du enkelt söka efter det med hälp av vår receptdatabas där du får upp flertalet olika recept baserat på sökningen.
+Har du inte handlat och har bara en massa random ingredienser i skafferiet är denna sida för dig, med vår sökmotor kan du få receptförslag på de varor du matar in i sökfältet för att slippa gå hungrig för dagen, och det vill vi ju inte.
+Så vad väntar du på? Börja använda Kokbok idag.....
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+För att använda kokbok.
 
-## Available Scripts
+-Först behöver du köra 'npm install' i din terminal
+-fungerar det inte efter det kör 'npm install' på dessa följande dependencies (axios, react-router-dom, react-bootstrap)
+-kör 'npm start' för att starta sidan
 
-In the project directory, you can run:
+Varför valde vi React?
 
-### `npm start`
+Vi valde React över Vue, Angular och Svelte av flera anledningar. För det första är React känt för sitt stora och aktiva community. Det finns en enorm mängd utvecklare runt om i världen som använder React och delar med sig av sina kunskaper och erfarenheter. Detta resulterar i ett omfattande utbud av resurser såsom dokumentation, tutorials och tredjepartsbibliotek som kan hjälpa oss i vår utvecklingsprocess. Att ha tillgång till en sådan community kan vara ovärderligt när vi stöter på problem eller behöver nya lösningar.
+Jämfört med Vue, Angular och Svelte har React en mindre inlärningskurva och kan vara mer intuitivt för utvecklare att komma igång med.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+När det kommer till prestanda och användargränssnitt, har React en fördel genom sin virtuella DOM. Den virtuella DOM:en möjliggör effektiv uppdatering och rendering av vårt användargränssnitt. Genom att bara uppdatera de delar av gränssnittet som har förändrats, istället för att rendera om hela sidan, kan vi skapa snabbare och mer responsiva applikationer. Detta kan ge användarna en smidig och snabb upplevelse. Även om Vue och Svelte också har liknande mekanismer för virtuell DOM, har React historiskt sett visat sig vara särskilt effektivt på detta område.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+När det kommer till ekosystemet av verktyg och tillbehör, har React ett starkt utbud att erbjuda. Det finns många tredjepartsbibliotek och verktyg som kan underlätta utvecklingsprocessen i React. Till exempel erbjuder React Redux eller MobX för tillståndshantering och React Router för navigering. Dessutom finns det många populära och väletablerade komponentbibliotek, som Material-UI eller Ant Design, som kan hjälpa oss att snabbt bygga användargränssnittet med en enhetlig design. Även om Vue, Angular och Svelte också har sina egna tillbehör och verktyg, har React ett större och mer varierat utbud.
 
-### `npm test`
+Till sist var det en stor anledning att det används frekvent inom arbetsindustrin idag och för att vara attraktiva på marknaden måste vi förbättra våra kunskaper inom detta.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

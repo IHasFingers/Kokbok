@@ -3,11 +3,11 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './style.css'
-
+// sätter nödvändiga variabler
 const SavedRecipesPage = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-  // Retrieve saved recipes from local storage
+  // Hämtar recept från localstorage
   const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
 
   const handleOpenRecipeModal = (recipe) => {
@@ -22,10 +22,10 @@ const SavedRecipesPage = () => {
     const updatedRecipes = [...savedRecipes];
     updatedRecipes.splice(index, 1);
     localStorage.setItem('savedRecipes', JSON.stringify(updatedRecipes));
-    // Refresh the component after deleting the recipe
+    // refreshar komponenten efter ett recept blivit raderat
     window.location.reload();
   };
-
+// returnerar samma struktur soim i searchbar
   return (
     <div className="container">
       <h1>Sparade recept</h1>

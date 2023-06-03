@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeModal from './RecipeModal';
-
+// retunerar saker specifikt för homepage
 const HomePage = ({
   recipes,
   selectedRecipe,
@@ -11,7 +11,7 @@ const HomePage = ({
     <div>
       <div className="container">
         <h1>Receptdatabasen</h1>
-        {/* Render the recipes or any other content specific to the home page */}
+        {/* renderar recept */}
       </div>
       {selectedRecipe && (
         <RecipeModal recipe={selectedRecipe} onClose={handleCloseRecipeModal} />
